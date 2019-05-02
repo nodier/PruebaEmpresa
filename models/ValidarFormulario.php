@@ -10,7 +10,7 @@ class ValidarFormulario extends model {
     public $nombre;
     public $email;
 
-    public function rules() {
+   /* public function rules() {
 
         return [
             ['nombre', 'required', 'message' => 'campo requerido'],
@@ -30,5 +30,5 @@ class ValidarFormulario extends model {
         ];
         
     }
-
+*/
 }

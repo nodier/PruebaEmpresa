@@ -3,12 +3,12 @@
 namespace app\controllers;
 
 use Yii;
-use yii\filters\AccessControl;
+//use yii\filters\AccessControl;
 use yii\web\Controller;
-use yii\web\Response;
-use yii\filters\VerbFilter;
-use app\models\LoginForm;
-use app\models\ContactForm;
+//use yii\web\Response;
+//use yii\filters\VerbFilter;
+//use app\models\LoginForm;
+//use app\models\ContactForm;
 use app\models\ValidarFormulario;
 
 
@@ -17,7 +17,7 @@ class SiteController extends Controller {
     /**
      * {@inheritdoc}
      */
-    public function actionSaluda($get = "tutorial yii") {
+   /* public function actionSaluda($get = "tutorial yii") {
 
         $mensaje = "hola";
         $numeros = [0, 1, 2, 3, 4, 5];
@@ -42,11 +42,12 @@ class SiteController extends Controller {
             $this->redirect(["site/formulario","mensaje"=>$mensaje]);
 
         
-    }
+    }*/
     
+     
     public function actionValidarformulario() {
         $model=new ValidarFormulario;
-        if($model->load(Yii::$app->request->post())){
+        /*if($model->load(Yii::$app->request->post())){
             
             if($model->validate()){
                 
@@ -55,13 +56,14 @@ class SiteController extends Controller {
              $model->getErrors();   
                 
             }
-        }
+        }*/
        return $this->render("validarformulario", ["model"=>$model]);
-    }
+    } 
+      
     
     
 
-    public function behaviors() {
+    /*public function behaviors() {
         return [
             'access' => [
                 'class' => AccessControl::className(),
@@ -81,12 +83,12 @@ class SiteController extends Controller {
                 ],
             ],
         ];
-    }
+    }*/
 
     /**
      * {@inheritdoc}
      */
-    public function actions() {
+   /* public function actions() {
         return [
             'error' => [
                 'class' => 'yii\web\ErrorAction',
@@ -103,7 +105,7 @@ class SiteController extends Controller {
      *
      * @return string
      */
-    public function actionIndex() {
+    /*public function actionIndex() {
         return $this->render('index');
     }
 
@@ -112,7 +114,7 @@ class SiteController extends Controller {
      *
      * @return Response|string
      */
-    public function actionLogin() {
+   /*public function actionLogin() {
         if (!Yii::$app->user->isGuest) {
             return $this->goHome();
         }
@@ -133,7 +135,7 @@ class SiteController extends Controller {
      *
      * @return Response
      */
-    public function actionLogout() {
+   /*public function actionLogout() {
         Yii::$app->user->logout();
 
         return $this->goHome();
@@ -144,7 +146,7 @@ class SiteController extends Controller {
      *
      * @return Response|string
      */
-    public function actionContact() {
+    /*public function actionContact() {
         $model = new ContactForm();
         if ($model->load(Yii::$app->request->post()) && $model->contact(Yii::$app->params['adminEmail'])) {
             Yii::$app->session->setFlash('contactFormSubmitted');
@@ -161,8 +163,8 @@ class SiteController extends Controller {
      *
      * @return string
      */
-    public function actionAbout() {
+    /*public function actionAbout() {
         return $this->render('about');
-    }
+    }*/
 
 }
